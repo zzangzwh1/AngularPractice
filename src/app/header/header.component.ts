@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
+constructor(){
 
 }
+  slogan:string ='Online Shopping'
+
+  getSlogan(){
+    return 'TESTTEST';
+  }
+}
+
