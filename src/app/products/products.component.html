@@ -1,0 +1,26 @@
+<div *ngFor="let item of products">
+
+    <table style="width: 800px;  border: 1px solid black;">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Availabilty</th>
+            <th>Show Details</th>
+            <th>Purchase</th>
+        </tr>
+        <tr [ngStyle]="{'background-color':  item.available === 'O' ? 'white' : 'pink'} "  >
+            <td>{{item.id}}</td>
+            <td>{{item.name}}</td>
+            <td>${{item.Price}}</td>
+            <td [ngStyle]="{color: item.available === 'O' ? 'green' : 'black' }">{{item.available}}</td>
+            <td><button class="btn btn-success">Show Details</button></td>
+            <td>
+                <button class="btn btn-warning" *ngIf="item.available == 'O'; else modify">Buy</button>
+                <ng-template #modify>
+                  <button class="btn btn-danger">Modify </button>
+                </ng-template>
+              </td>
+    </table>
+    
+</div>
